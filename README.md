@@ -1,5 +1,5 @@
 ### Install
 
 ```bash
-curl -fsSL https://yhue.github.io/peaberry/bootstrap | bash
+curl -fsSL https://raw.githubusercontent.com/yhue/peaberry/HEAD/bootstrap | bash
 ```
