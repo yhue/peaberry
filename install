@@ -5,7 +5,7 @@
 # transaction
 function tx() {
     . ${1} || {
-        1>&2 echo "[error] ${1} failed"
+        echo 1>&2 "[error] ${1} failed"
         exit
     }
 }
@@ -15,6 +15,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     #tx homebrew/bootstrap
     #tx os/darwin/postamble
 else
-    1>&2 echo "[error] unsupported os-type"
+    echo 1>&2 "[error] unsupported os-type"
     exit
 fi

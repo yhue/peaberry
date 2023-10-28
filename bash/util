@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
 function __dir__() {
-    echo $( cd -- "$( dirname -- "${BASH_SOURCE[1]}" )" &> /dev/null && pwd )
+    echo $(cd -- "$(dirname -- "${BASH_SOURCE[1]}")" &> /dev/null && pwd)
 }
-

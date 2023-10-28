@@ -5,11 +5,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     if command -v git &> /dev/null; then
         echo "[info] git found, ok"
     else
-        1>&2 echo "[error] git not found, ng"
+        echo 1>&2 "[error] git not found, ng"
         exit
     fi
 else
-    1>&2 echo "[error] unsupported os-type"
+    echo 1>&2 "[error] unsupported os-type"
     exit
 fi
 
@@ -35,7 +35,7 @@ git clone \
     --depth 1 \
     https://github.com/yhue/peaberry.git \
     ${src} \
-;
+    ;
 
 (
     echo "[info] start dotfile installation"

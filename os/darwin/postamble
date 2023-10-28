@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 echo "[info] set user default shell"
-sudo chpass -s /usr/local/bin/bash $( id -un )
+sudo chpass -s /usr/local/bin/bash $(id -un)
