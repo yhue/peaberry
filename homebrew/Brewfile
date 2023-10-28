@@ -48,7 +48,6 @@ brew "gzip"
 brew "make"
 
 # platform tools
-# source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
 brew "aws-sam-cli"
 brew "awscli"
 brew "gh"
@@ -71,6 +70,7 @@ cask "docker"
 # linter, formatter
 brew "actionlint"
 brew "cfn-lint"
+brew "jsonlint"
 brew "shellcheck"
 brew "shfmt"
 brew "yamllint"
