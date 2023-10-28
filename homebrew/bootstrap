@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+if command -v brew &> /dev/null; then
+    read -p $'\n[prompt] reinstall homebrew? (y/n): ' yn
+    if [[ "${yn,,}" == 'y' ]]; then
+        $(__dir__)/install
+    fi
+else
+    $(__dir__)/install
+fi
+
+echo "[info] brew update"
+brew update
+
+echo "[info] brew bundle install"
+brew bundle install \
+    --force \
+    --no-lock \
+    --file $(__dir__)/Brewfile \
+;
+
+if [ -f $(__dir__)/Brewfile.local ]; then
+    echo "[info] brew local bundle install"
+    brew bundle install \
+        --force \
+        --no-lock \
+        --file $(__dir__)/Brewfile.local \
+    ;
+fi

@@ -1,0 +1,4 @@
+# localise
+*.local
+local.*
+!local.*.sample

@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+echo "[info] check prerequisites"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    if command -v git &> /dev/null; then
+        echo "[info] git found, ok"
+    else
+        1>&2 echo "[error] git not found, ng"
+        exit
+    fi
+else
+    1>&2 echo "[error] unsupported os-type"
+    exit
+fi
+
+src=${HOME}/.dotfile
+bak=${HOME}/.dotfile.bak
+
+if [[ -e ${bak} ]]; then
+    echo "[info] clear old ${bak}"
+    rm -rf ${bak}
+fi
+
+if [[ -f ${src} ]]; then
+    echo "[info] store a file ${src} into ${bak}"
+    mkdir ${bak}
+    mv ${src} ${bak}
+else if [[ -d ${src} ]]; then
+    echo "[info] store a directory ${src} as ${bak}"
+    mv ${src} ${bak}
+fi
+
+echo "[info] get dotfile source"
+git clone \
+    --depth 1 \
+    https://github.com/yhue/peaberry.git \
+    ${src} \
+;
+
+(
+    echo "[info] start dotfile installation"
+    cd ${src}
+    bash ./install
+)
+
+echo "[info] finish bootstrap"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "[info] uninstall homebrew"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"

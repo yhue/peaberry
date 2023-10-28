@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+. bash/util
+
+# transaction
+function tx() {
+    . ${1} || {
+        1>&2 echo "[error] ${1} failed"
+        exit
+    }
+}
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    #tx os/darwin/bootstrap
+    #tx homebrew/bootstrap
+    #tx os/darwin/postamble
+else
+    1>&2 echo "[error] unsupported os-type"
+    exit
+fi
