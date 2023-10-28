@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 . bash/util
+. bash/dotfile_util
 
 # transaction
 function tx() {
@@ -13,6 +14,7 @@ function tx() {
 if [[ "$OSTYPE" == "darwin"* ]]; then
     #tx os/darwin/bootstrap
     #tx homebrew/bootstrap
+    tx bash/bootstrap
     #tx os/darwin/postamble
 else
     echo 1>&2 "[error] unsupported os-type"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -sfv $(__dir__)/.bash_profile ${HOME}
+ln -sfv $(__dir__)/.bashrc ${HOME}
