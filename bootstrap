@@ -38,9 +38,13 @@ git clone \
     ;
 
 (
+    export DOTFILE_SOURCE="${src}"
+    export DOTFILE_BACKUP="${bak}"
+
+    cd "${DOTFILE_SOURCE}"
+
     echo "[info] start dotfile installation"
-    cd ${src}
-    ./install
+    . ./install
 )
 
 echo "[info] finish bootstrap"
