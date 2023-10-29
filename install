@@ -5,7 +5,10 @@
 
 # transaction
 function tx() {
-    . ${1} || {
+    {
+        echo "[info] transaction ${1}"
+        . ${1}
+    } || {
         echo 1>&2 "[error] ${1} failed"
         exit 1
     }
