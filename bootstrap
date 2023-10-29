@@ -13,33 +13,32 @@ else
     exit
 fi
 
-src=${HOME}/.dotfile
-bak=${HOME}/.dotfile.bak
+# backup dotfile
+DOTFILE_SOURCE="${HOME}"/.dotfile
+DOTFILE_BACKUP="${HOME}"/.dotfile.bak
 
-if [[ -e ${bak} ]]; then
-    echo "[info] clear old ${bak}"
-    rm -rf ${bak}
+if [[ -e "${DOTFILE_BACKUP}" ]]; then
+    echo "[info] clear old ${DOTFILE_BACKUP}"
+    rm -rf "${DOTFILE_BACKUP}"
 fi
 
-if [[ -f ${src} ]]; then
-    echo "[info] store a file ${src} into ${bak}"
-    mkdir ${bak}
-    mv ${src} ${bak}
-elif [[ -d ${src} ]]; then
-    echo "[info] store a directory ${src} as ${bak}"
-    mv ${src} ${bak}
+mkdir "${DOTFILE_BACKUP}"
+
+if [[ -e "${DOTFILE_SOURCE}" ]]; then
+    echo "[info] store previous dotfile ${DOTFILE_SOURCE} into ${DOTFILE_BACKUP}"
+    mv "${DOTFILE_SOURCE}" "${DOTFILE_BACKUP}"
 fi
 
 echo "[info] get dotfile source"
 git clone \
     --depth 1 \
     https://github.com/yhue/peaberry.git \
-    ${src} \
+    "${DOTFILE_SOURCE}" \
     ;
 
 (
-    export DOTFILE_SOURCE="${src}"
-    export DOTFILE_BACKUP="${bak}"
+    export DOTFILE_SOURCE
+    export DOTFILE_BACKUP
 
     cd "${DOTFILE_SOURCE}"
 
