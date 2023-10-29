@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+xcode_dir=$(sudo xcode-select --print-path)
+
+if [[ -d "${xcode_dir}" ]]; then
+    echo "[info] ${xcode_dir} found"
+    read -rp $'\n[prompt] remove existing xcode tools? (y/n): ' cleanup
+    if [[ "${cleanup,,}" == 'y' ]]; then
+        echo "[info] remove ${xcode_dir}"
+        sudo rm -rf "${xcode_dir}"
+    fi
+else
+    echo "[info] xcode tools not found"
+fi
+
+echo "[info] install xcode tools"
+sudo xcode-select --install

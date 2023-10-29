@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 
-echo "[info] install xcode command line tools"
-(
-    xcode_dir=$(sudo xcode-select --print-path)
-    if [[ -d "${xcode_dir}" ]]; then
-        read -p $'\n[prompt] clear existing xcode tools? (y/n): ' yn
-        if [[ "${yn,,}" == 'y' ]]; then
-            sudo rm -rf $xcode_dir
-            sudo xcode-select --install
-        fi
-    else
-        sudo xcode-select --install
-    fi
-)
+read -rp $'\n[prompt] install xcode command line tools? (y/n): ' install_xcode_tools
+if [[ "${install_xcode_tools,,}" == 'y' ]]; then
+    . "$(__dir__)"/install-xcode-tools
+fi
