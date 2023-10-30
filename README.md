@@ -1,3 +1,9 @@
+### Prerequisites
+
+```text
+bash, git
+```
+
 ### Bootstrap
 
 ```bash
