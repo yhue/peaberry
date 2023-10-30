@@ -15,12 +15,12 @@ function tx() {
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    #tx os/darwin/bootstrap
-    #tx homebrew/bootstrap
-    #tx bash/bootstrap
+    tx os/darwin/bootstrap
+    tx homebrew/bootstrap
+    tx bash/bootstrap
     tx vim/bootstrap
     tx git/bootstrap
-    #tx os/darwin/postamble
+    tx os/darwin/postamble
 else
     echo >&2 "[error] unsupported os-type"
     exit 2
