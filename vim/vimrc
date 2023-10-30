@@ -53,24 +53,17 @@ let g:plug_shallow = 0
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'arcticicestudio/nord-vim'
+Plug 'hrsh7th/vim-eft'
+Plug 'cohama/lexima.vim'
+Plug 'machakann/vim-sandwich'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'arcticicestudio/nord-vim'
 "Plug 'thinca/vim-ambicmd'
 "Plug 'thinca/vim-openbuf'
 "Plug 'thinca/vim-quickrun'
-"
-" vim-lsp, vim-lsp-settings
-"Plug 'prabirshrestha/asyncomplete.vim'
-"Plug 'prabirshrestha/asyncomplete-lsp.vim'
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'mattn/vim-lsp-settings'
-"Plug 'mattn/vim-lsp-icons'
 "Plug 'hrsh7th/vim-vsnip'
 "Plug 'hrsh7th/vim-vsnip-integ'
-
-" kotlin
-"Plug 'udalov/kotlin-vim'
 
 " vim-codefmt
 Plug 'google/vim-maktaba'
