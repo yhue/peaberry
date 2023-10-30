@@ -9,7 +9,7 @@ function tx() {
         echo "[info] transaction ${1}"
         . ${1}
     } || {
-        echo 1>&2 "[error] ${1} failed"
+        echo >&2 "[error] ${1} failed"
         exit 1
     }
 }
@@ -21,6 +21,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     tx vim/bootstrap
     #tx os/darwin/postamble
 else
-    echo 1>&2 "[error] unsupported os-type"
-    exit
+    echo >&2 "[error] unsupported os-type"
+    exit 2
 fi
