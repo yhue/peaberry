@@ -54,29 +54,9 @@
   algorithm        = histogram
   mnemonicPrefix   = true
 
-[difftool "idea"]
-  cmd = /Applications/IntelliJ\\ IDEA\\ CE.app/Contents/MacOS/idea diff nosplash dontReopenProjects disableNonBundledPlugins $LOCAL $REMOTE
-  trustExitCode   = false
-
-[difftool "ideafg"]
-  cmd = /Applications/IntelliJ\\ IDEA\\ CE.app/Contents/MacOS/idea diff $LOCAL $REMOTE
-  trustExitCode   = false
-
 [merge]
   stat = true
   ff   = false
-
-[mergetool "idea"]
-  cmd = /Applications/IntelliJ\\ IDEA\\ CE.app/Contents/MacOS/idea merge nosplash dontReopenProjects disableNonBundledPlugins $LOCAL $REMOTE $BASE $MERGED
-  keepTemporaries = false
-  trustExitCode   = false
-  keepBackup      = false
-
-[difftool "ideafg"]
-  cmd = /Applications/IntelliJ\\ IDEA\\ CE.app/Contents/MacOS/idea merge $LOCAL $REMOTE $BASE $MERGED 
-  keepTemporaries = false
-  trustExitCode   = false
-  keepBackup      = false
 
 [rebase]
   stat = true
