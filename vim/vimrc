@@ -67,8 +67,8 @@ Plug 'junegunn/fzf.vim'
 
 " vim-codefmt
 Plug 'google/vim-maktaba'
-Plug 'google/vim-glaive'
 Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
 
 call plug#end()
 
