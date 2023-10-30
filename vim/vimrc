@@ -68,12 +68,9 @@ Plug 'junegunn/fzf.vim'
 " vim-codefmt
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
+Plug 'google/vim-glaive', { 'do': { -> glaive#Install() } }
 
 call plug#end()
-
-call glaive#Install()
-Glaive codefmt shfmt_options=`['-i', '4', '-sr', '-ci']`
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
