@@ -19,6 +19,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     #tx homebrew/bootstrap
     #tx bash/bootstrap
     tx vim/bootstrap
+    tx git/bootstrap
     #tx os/darwin/postamble
 else
     echo >&2 "[error] unsupported os-type"

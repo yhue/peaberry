@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo "[info] refresh git dotfile"
+for dotname in config ignore attributes; do
+    ln -sfv "$(__dir__)/${dotname}" "${HOME}/.git${dotname}"
+done
+
+touch "${HOME}"/.gitlocal

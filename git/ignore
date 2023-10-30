@@ -1,0 +1,24 @@
+# localise
+.gitlocal
+
+# windows
+[Dd]esktop.ini
+[Tt]humbs.db
+
+# macOS
+.DS_Store
+._*
+
+# vim
+.*.swp
+
+# editor
+.vscode/*
+.idea/
+
+# modules, libraries
+node_modules/
+.bundle/
+
+# log
+*.log
