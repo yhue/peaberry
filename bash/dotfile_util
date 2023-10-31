@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
 
+function xdg_config_home() {
+    echo "${HOME}"/.config
+}

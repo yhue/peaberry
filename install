@@ -14,6 +14,9 @@ function tx() {
     }
 }
 
+# prepare xdg spec
+[[ -d "$(xdg_config_home)" ]] || mkdir -p "$(xdg_config_home)"
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     tx os/darwin/bootstrap
     tx homebrew/bootstrap
