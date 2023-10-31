@@ -32,6 +32,9 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -boolean true
 # ファイルの保存場所のデフォルトをiCloud以外にする
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
+# ウィンドウのどこでもドラッグ可能にする
+defaults write NSGlobalDomain NSWindowShouldDragOnGesture -bool true
+
 # 外部ディスプレイでアンチエイリアスを有効にする（サブピクセルレンダリングを「中」レベルで設定）
 defaults -currentHost write -globalDomain AppleFontSmoothing -int 2
 
