@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+echo "[info] replace tmux dotfile"
+for dotname in .tmux.conf; do
+    dotfile="${HOME}/${dotname}"
+    [[ -e "${dotfile}" ]] && rm -rf "${dotfile}"
+done
+
+ln -sfv "$(__dir__)" "$(xdg_config_home)"
+
+echo "[info] install tpm"
+tpm_dir="${HOME}"/.local/share/tmux/plugins/tpm
+[[ -d "${tpm_dir}" ]] && rm -rf "${tpm_dir}"
+git clone https://github.com/tmux-plugins/tpm "${tpm_dir}"
