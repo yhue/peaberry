@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "[info] replace alacritty dotfile"
+for dotname in .alacritty.yml; do
+    dotfile="${HOME}/${dotname}"
+    [[ -e "${dotfile}" ]] && rm -rf "${dotfile}"
+done
+
+ln -sfv "$(__dir__)" "$(xdg_config_home)"
