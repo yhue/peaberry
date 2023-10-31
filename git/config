@@ -1,5 +1,5 @@
 [include]
-  path = ~/.gitlocal
+  path = local
 
 [color]
   branch      = auto
@@ -11,7 +11,7 @@
 
 [core]
   editor       = /usr/local/bin/vim
-  excludesfile = ~/dotfiles/git/ignore
+  excludesfile = ignore
   fileMode     = true
   ignoreCase   = false
   quotePath    = false
@@ -178,6 +178,7 @@
 
   # commit
   c     = commit -v
+  cm    = commit -v --message
   ca    = commit -v --amend
   ac    = commit -a -v
   aca   = commit -a -v --amend

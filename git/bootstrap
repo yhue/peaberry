@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-echo "[info] refresh git dotfile"
+echo "[info] replace git dotfile"
 for dotname in config ignore attributes; do
-    ln -sfv "$(__dir__)/${dotname}" "${HOME}/.git${dotname}"
+    dotfile="${HOME}/.git${dotname}"
+    [[ -e "${dotfile}" ]] && rm -rf "${dotfile}"
 done
 
-touch "${HOME}"/.gitlocal
+ln -sfv "$(__dir__)" "$(xdg_config_home)"
+touch "$(__dir__)"/local
