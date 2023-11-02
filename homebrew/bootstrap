@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
 if command -v brew &> /dev/null; then
-    read -p $'\n[prompt] reinstall homebrew? (y/n): ' yn
-    if [[ "${yn}" == 'y' ]]; then
+    echo "[info] homebrew found"
+    read -p $'\n[prompt] reinstall homebrew? (y/n): ' reinstall
+    if [[ "${reinstall}" == 'y' ]]; then
+        read -p $'\n[prompt] uninstall existing homebrew? (y/n): ' uninstall
+        if [[ "${uninstall}" == 'y' ]]; then
+            $(__dir__)/uninstall
+        fi
         $(__dir__)/install
     fi
 else
@@ -17,7 +22,7 @@ brew bundle install \
     --force \
     --no-lock \
     --file $(__dir__)/Brewfile \
-;
+    ;
 
 if [ -f $(__dir__)/Brewfile.local ]; then
     echo "[info] brew local bundle install"
@@ -25,5 +30,5 @@ if [ -f $(__dir__)/Brewfile.local ]; then
         --force \
         --no-lock \
         --file $(__dir__)/Brewfile.local \
-    ;
+        ;
 fi
