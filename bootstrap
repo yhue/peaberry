@@ -52,3 +52,4 @@ curl -fsSL https://github.com/yhue/peaberry/archive/refs/heads/main.tar.gz |
 )
 
 echo "[info] finish bootstrap"
+echo "[recommend] restart computers to cleanly activate all features"
