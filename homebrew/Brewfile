@@ -67,6 +67,11 @@ brew "stern"
 brew "velero"
 cask "docker"
 
+# databases
+brew "postgresql"
+brew "mysql"
+brew "redis"
+
 # linter, formatter
 brew "actionlint"
 brew "cfn-lint"
