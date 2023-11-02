@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
 
-echo "[info] check prerequisites"
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    if command -v git &> /dev/null; then
-        echo "[info] git found, ok"
+function cmd_test() {
+    if command -v ${1} &> /dev/null; then
+        echo "[info] ${1} found, ok"
     else
-        echo 1>&2 "[error] git not found, ng"
+        echo 1>&2 "[error] ${1} not found, ng"
         exit
     fi
+}
+
+echo "[info] check prerequisites"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    cmd_test curl
+    cmd_test tar
 else
     echo 1>&2 "[error] unsupported os-type"
     exit
@@ -29,11 +34,11 @@ if [[ -e "${DOTFILE_SOURCE}" ]]; then
     mv "${DOTFILE_SOURCE}" "${DOTFILE_BACKUP}"
 fi
 
+mkdir "${DOTFILE_SOURCE}"
+
 echo "[info] get dotfile source"
-git clone \
-    --depth 1 \
-    https://github.com/yhue/peaberry.git \
-    "${DOTFILE_SOURCE}" \
+curl -fsSL https://github.com/yhue/peaberry/archive/refs/heads/main.tar.gz |
+    tar zxf - --directory="${DOTFILE_SOURCE}" --strip-components 1 \
     ;
 
 (
