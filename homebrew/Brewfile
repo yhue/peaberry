@@ -56,7 +56,6 @@ brew "terraform"
 cask "google-cloud-sdk"
 
 # container tools
-brew "docker-credential-helper-ecr"
 brew "helm"
 brew "kind"
 brew "kubectl"
