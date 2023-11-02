@@ -3,6 +3,9 @@
 read -rp $'\n[prompt] install xcode command line tools? (y/n): ' install_xcode_tools
 if [[ "${install_xcode_tools}" == 'y' ]]; then
     . "$(__dir__)"/install-xcode-tools
+
+    echo "[info] wait for finishing xcode tools istallation"
+    read -rp $'\n[prompt] press enter to continue: '
 fi
 
 echo "[info] set default system settings"
