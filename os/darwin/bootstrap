@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 read -rp $'\n[prompt] install xcode command line tools? (y/n): ' install_xcode_tools
-if [[ "${install_xcode_tools,,}" == 'y' ]]; then
+if [[ "${install_xcode_tools}" == 'y' ]]; then
     . "$(__dir__)"/install-xcode-tools
 fi
 
