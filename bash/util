@@ -3,3 +3,7 @@
 function __dir__() {
     echo $(cd -- "$(dirname -- "${BASH_SOURCE[1]}")" &> /dev/null && pwd)
 }
+
+function ghcd() {
+    cd "$(ghq root)/$(ghq list | fzf)"
+}
