@@ -11,8 +11,8 @@ eval "$(/usr/local/bin/brew shellenv)"
 # bash completion
 load_regular_file "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
-# rtx
-eval "$($(brew --prefix)/bin/rtx activate bash)"
+# mise
+eval "$($(brew --prefix)/bin/mise activate bash)"
 
 # google cloud sdk
 . "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
