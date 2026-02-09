@@ -6,7 +6,8 @@ function load_regular_file() {
 }
 
 # homebrew
-eval "$(/usr/local/bin/brew shellenv)"
+command -v brew || export PATH="/opt/homebrew/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/bin"
+command -v brew && eval "$(brew shellenv)"
 
 # bash completion
 load_regular_file "$(brew --prefix)/etc/profile.d/bash_completion.sh"

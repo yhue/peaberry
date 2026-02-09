@@ -20,7 +20,6 @@ brew update
 echo "[info] brew bundle install"
 brew bundle install \
     --force \
-    --no-lock \
     --file $(__dir__)/Brewfile \
     ;
 
