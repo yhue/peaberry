@@ -9,7 +9,6 @@ brew "vim"
 cask "alacritty"
 
 # fonts
-tap "homebrew/cask-fonts"
 cask "font-plemol-jp"
 cask "font-plemol-jp-nf"
 cask "font-moralerspace"
