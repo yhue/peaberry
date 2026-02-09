@@ -12,6 +12,7 @@ cask "alacritty"
 tap "homebrew/cask-fonts"
 cask "font-plemol-jp"
 cask "font-plemol-jp-nf"
+cask "font-moralerspace"
 
 # general
 brew "curl"
@@ -28,6 +29,7 @@ brew "watch"
 brew "wdiff"
 brew "wget"
 brew "yq"
+brew "dyff"
 
 # modern alternative
 brew "bat"
@@ -48,11 +50,13 @@ brew "gzip"
 brew "make"
 
 # platform tools
+tap "hashicorp/tap"
 brew "aws-sam-cli"
 brew "awscli"
 brew "gh"
 brew "packer"
-brew "terraform"
+brew "hashicorp/tap/terraform"
+brew "tflint"
 cask "google-cloud-sdk"
 
 # container tools
@@ -61,9 +65,9 @@ brew "kind"
 brew "kubectl"
 brew "kubectx"
 brew "kustomize"
+brew "krew"
 brew "minikube"
-brew "stern"
-brew "velero"
+brew "argocd"
 cask "docker"
 
 # databases
@@ -78,9 +82,11 @@ brew "jsonlint"
 brew "shellcheck"
 brew "shfmt"
 brew "yamllint"
+brew "biome"
 
 # desktop
-cask "alfred"
+cask "raycast"
 cask "google-chrome"
 cask "notion"
 cask "slack"
+cask "claude-code"

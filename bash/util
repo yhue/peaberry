@@ -5,5 +5,19 @@ function __dir__() {
 }
 
 function ghcd() {
-    cd "$(ghq root)/$(ghq list | fzf)"
+    if [[ -z "${1}" ]]; then
+        local opt_query=""
+    else
+        local opt_query="--query ${1}"
+    fi
+    cd "$(ghq root)/$(ghq list | fzf ${opt_query})"
+}
+
+function ghopen() {
+    if [[ -z "${1}" ]]; then
+        local opt_query=""
+    else
+        local opt_query="--query ${1}"
+    fi
+    gh repo view "$(ghq list | fzf ${opt_query})" --web
 }
