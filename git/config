@@ -10,7 +10,7 @@
   ui          = auto
 
 [core]
-  editor       = /usr/local/bin/vim
+  editor       = vim
   excludesfile = ignore
   fileMode     = true
   ignoreCase   = false

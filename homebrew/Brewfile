@@ -86,6 +86,7 @@ brew "biome"
 # desktop
 cask "raycast"
 cask "google-chrome"
+cask "google-japanese-ime"
 cask "notion"
 cask "slack"
 cask "claude-code"

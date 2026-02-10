@@ -1,13 +1,13 @@
 # utilities
 . ~/.dotfile/bash/util
+. ~/.dotfile/bash/dotfile_util
 
 function load_regular_file() {
     [[ -r "${1}" ]] && . "${1}"
 }
 
 # homebrew
-command -v brew || export PATH="/opt/homebrew/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/bin"
-command -v brew && eval "$(brew shellenv)"
+load_brew
 
 # bash completion
 load_regular_file "$(brew --prefix)/etc/profile.d/bash_completion.sh"

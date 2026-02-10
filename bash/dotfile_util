@@ -3,3 +3,8 @@
 function xdg_config_home() {
     echo "${HOME}"/.config
 }
+
+function load_brew() {
+    command -v brew || export PATH="/opt/homebrew/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/bin"
+    command -v brew && eval "$(brew shellenv)"
+}

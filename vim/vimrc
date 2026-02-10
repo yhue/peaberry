@@ -3,7 +3,7 @@
 setg nocompatible
 
 if !has('win32') && !has('win64')
-  setg shell=/usr/local/bin/bash
+  setg shell=bash
 endif
 
 if exists('&completeslash')
