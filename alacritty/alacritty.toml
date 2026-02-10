@@ -57,7 +57,7 @@ text = "#2e3440"
 size = 15.0
 
 [font.normal]
-family = "Moralerspace Argon JPDOC"
+family = "Moralerspace Argon"
 style = "Regular"
 
 [font.offset]

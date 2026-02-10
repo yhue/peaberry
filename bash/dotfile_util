@@ -5,6 +5,10 @@ function xdg_config_home() {
 }
 
 function load_brew() {
-    command -v brew || export PATH="/opt/homebrew/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/bin"
-    command -v brew && eval "$(brew shellenv)"
+    if ! command -v brew &> /dev/null; then
+        export PATH="/opt/homebrew/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/bin"
+    fi
+    if command -v brew &> /dev/null; then
+        eval "$(brew shellenv)"
+    fi
 }
