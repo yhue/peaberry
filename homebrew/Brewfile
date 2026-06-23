@@ -54,8 +54,8 @@ brew "awscli"
 brew "gh"
 brew "hashicorp/tap/packer", trusted: true
 brew "hashicorp/tap/terraform", trusted: true
-brew "tflint"
-cask "google-cloud-sdk"
+brew "terraform-linters/tap/tflint"
+cask "gcloud-cli"
 
 # container tools
 brew "helm"
@@ -66,7 +66,7 @@ brew "kustomize"
 brew "krew"
 brew "minikube"
 brew "argocd"
-cask "docker"
+cask "docker-desktop"
 
 # databases
 brew "postgresql"
