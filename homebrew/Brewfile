@@ -54,7 +54,6 @@ brew "awscli"
 brew "gh"
 brew "hashicorp/tap/packer", trusted: true
 brew "hashicorp/tap/terraform", trusted: true
-brew "terraform-linters/tap/tflint"
 cask "gcloud-cli"
 
 # container tools
